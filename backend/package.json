@@ -1,0 +1,41 @@
+{
+  "name": "cookbook",
+  "version": "1.0.0",
+  "description": "Cookbook 2.0",
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "private": false,
+  "keywords": [
+    "swagger",
+    "autogen",
+    "example",
+    "router"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trainerbe1/23-3-BE.git"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node swagger.js && nodemon src/index.js",
+    "setup-recipes": "node setup_recipes.js",
+    "swagger": "node swagger.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.15.0",
+    "bcrypt": "^5.1.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-autogen": "^2.23.4",
+    "swagger-ui-express": "^4.1.4",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.3"
+  }
+}
