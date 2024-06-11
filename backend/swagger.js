@@ -19,6 +19,10 @@ const doc = {
             "description": "Authentications"
         },
         {
+            "name": "Areas",
+            "description": "Areas"
+        },
+        {
             "name": "Shopping Lists",
             "description": "Shopping Lists"
         },

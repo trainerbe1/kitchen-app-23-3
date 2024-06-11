@@ -16,6 +16,25 @@ const themes = {
           boxShadow: 'var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
           transform: 'translate(-50%, -50%)',
         }
+    },
+    selectDropdown: {
+      singleValue: (base, state) => ({
+        ...base,
+        color: 'whitesmoke'
+      }),
+      control: (base, state) => ({
+        ...base,
+        background: "#475569",
+        border: 'none',
+        }),
+        menu: base => ({
+          ...base,
+          background: "#475569",
+          border: 'none',
+      }),
+      menuList: base => ({
+        ...base,
+      })
     }
 };
 

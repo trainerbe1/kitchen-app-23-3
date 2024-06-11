@@ -12,6 +12,7 @@ import mealPlannerRoutes from './routes/meal_planner_routes.js';
 import favouriteRoutes from './routes/favourite_routes.js';
 import userRoutes from './routes/user_routes.js';
 import categoryRoutes from './routes/category_routes.js';
+import areaRoutes from './routes/area_routes.js';
 
 const app = express()
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* Routes */
+app.use(areaRoutes);
 app.use(categoryRoutes);
 app.use(userRoutes);
 app.use(favouriteRoutes);
