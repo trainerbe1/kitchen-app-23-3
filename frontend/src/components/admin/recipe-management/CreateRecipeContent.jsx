@@ -7,6 +7,7 @@ import { getRecipes, deleteRecipeById } from "../../../services/recipe_service";
 import ReactModal from "react-modal";
 import themes from "../../../common/theme";
 import Confirm from "../../Confirm";
+import ReactSelect from "react-select";
 
 function CreateRecipeContent() {
   const [instruction, setInstruction] = useState('');
@@ -14,6 +15,16 @@ function CreateRecipeContent() {
 
   const [ingredient, setIngredient] = useState('');
   const [ingredients, setIngredients] = useState([]);
+
+  const [areas, setAreas] = useState([{ value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },]);
+  const [selectedArea, setSelectedArea] = useState(null);
+
+  const [categories, setCategories] = useState([{ value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   function addIngredient(e) {
     e.preventDefault();
@@ -49,6 +60,39 @@ function CreateRecipeContent() {
           <div className="mb-4">
             <div className="text-white mb-2">Name:</div>
             <input type="text" className={`${themes.textfield}`} placeholder="Chicken Curry..." />
+          </div>
+
+          <div className="mb-4">
+            <div className="text-white mb-2">Video Url:</div>
+            <input type="text" className={`${themes.textfield}`} placeholder="https://..." />
+          </div>
+
+          <div className="mb-4">
+            <div className="text-white mb-2">Image Url:</div>
+            <input type="text" className={`${themes.textfield}`} placeholder="https://..." />
+          </div>
+          
+          <div className="mb-4">
+            <div className="text-white mb-2">Tags:</div>
+            <input type="text" className={`${themes.textfield}`} placeholder="Baking,Fruity,Tart" />
+          </div>
+          
+          <div className="mb-4">
+            <div className="text-white mb-2">Area:</div>
+            <ReactSelect
+              value={selectedArea}
+              onChange={(e) => setSelectedArea(e)}
+              options={areas}
+            />
+          </div>
+          
+          <div className="mb-4">
+            <div className="text-white mb-2">Category:</div>
+            <ReactSelect
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e)}
+              options={categories}
+            />
           </div>
 
         </div>
